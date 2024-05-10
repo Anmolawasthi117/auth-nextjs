@@ -20,9 +20,8 @@ export const sendEmail = async({email, emailType, userId}:any) => {
             host: "sandbox.smtp.mailtrap.io",
             port: 2525,
             auth: {
-              user: "3fd364695517df",
-              pass: "7383d58fd399cf"
-              //TODO: add these credentials to .env file
+              user: "922b6c70c30d22",
+              pass: "757cbf7b8716b3"
             }
           });
 
@@ -38,9 +37,12 @@ export const sendEmail = async({email, emailType, userId}:any) => {
 
         const mailresponse = await transport.sendMail
         (mailOptions);
+        console.log("mail res success");
         return mailresponse;
 
     } catch (error:any) {
+        console.log("mail res success");
         throw new Error(error.message);
+        
     }
 }
